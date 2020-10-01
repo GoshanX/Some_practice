@@ -9,21 +9,30 @@ namespace Task_3
     public class Company
     {
         List<IEmployee> employees = new List<IEmployee>();
-        public static ulong Income { get; set; }
-        public static double BaseSalary { get; set; }
-        public Company(ulong income, double baseSalary)
+        public double Income { get; set; }
+
+        public Company(double income)
         {
             Income = income;
-            BaseSalary = baseSalary;
         }
+
         /// <summary>
         /// Hiriring a new employee
         /// </summary>
         /// <param name="newEmployee">New person</param>
         public void Hire(IEmployee newEmployee)
         {
-            employees.Add(newEmployee);
+            if (Income > newEmployee.getMonthSalary())
+            {
+                employees.Add(newEmployee);
+                Income -= newEmployee.getMonthSalary();
+            }
+            else
+            {
+                throw new Exception("Невозможно нанять сотрудника, так как недостаточно средств для выплаты зарплаты");
+            }
         }
+
         /// <summary>
         /// dismissal of an employees
         /// </summary>
@@ -38,9 +47,14 @@ namespace Task_3
             {
                 Random r = new Random();
                 for (int i = 0; i < count; i++)
-                    employees.RemoveAt(r.Next(0, employees.Count - 1));
+                {
+                    int indexRemove = r.Next(0, employees.Count - 1);
+                    Income -= employees[indexRemove].getMonthSalary();
+                    employees.RemoveAt(indexRemove);
+                }
             }
         }
+
         /// <summary>
         /// Hiring employees from the list
         /// </summary>
@@ -49,9 +63,10 @@ namespace Task_3
         {
             foreach (var emp in newEmployees)
             {
-                employees.Add(emp);
+                Hire(emp);
             }
         }
+
         /// <summary>
         /// dismissal employee
         /// </summary>
@@ -59,7 +74,9 @@ namespace Task_3
         public void Fire(IEmployee employee)
         {
             employees.Remove(employee);
+            Income += employee.getMonthSalary();
         }
+
         /// <summary>
         /// getting the list of employees with the highest salary
         /// </summary>
@@ -67,9 +84,17 @@ namespace Task_3
         /// <returns></returns>
         List<IEmployee> getTopSalaryStaff(int count)
         {
-            employees = employees.OrderByDescending(i => i.getMonthSalary()).ToList();
-            return employees.GetRange(0, count);
+            if (count < employees.Count && count > 0)
+            {
+                employees = employees.OrderByDescending(i => i.getMonthSalary()).ToList();
+                return employees.GetRange(0, count);
+            }
+            else
+            {
+                throw new ArgumentException("Неверное значение параметра count");
+            }
         }
+
         /// <summary>
         /// getting the list of employees with the lowest salary
         /// </summary>
@@ -77,9 +102,17 @@ namespace Task_3
         /// <returns></returns>
         List<IEmployee> getLowestSalaryStaff(int count)
         {
-            employees = employees.OrderBy(i => i.getMonthSalary()).ToList();
-            return employees.GetRange(0, count);
+            if (count < employees.Count && count > 0)
+            {
+                employees = employees.OrderBy(i => i.getMonthSalary()).ToList();
+                return employees.GetRange(0, count);
+            }
+            else
+            {
+                throw new ArgumentException("Неверное значение параметра count");
+            }
         }
+
         /// <summary>
         /// Print top employee`s salaries
         /// </summary>
@@ -94,6 +127,7 @@ namespace Task_3
                 pos++;
             }
         }
+
         /// <summary>
         /// Print low employee`s salaries
         /// </summary>

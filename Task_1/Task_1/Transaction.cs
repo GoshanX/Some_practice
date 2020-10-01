@@ -54,6 +54,7 @@ namespace Task_1
             Income = Convert.ToDouble(transactionDescription[6]);
             Expense = Convert.ToDouble(transactionDescription[7]);
         }
+       
         /// <summary>
         /// defining the organization where possible
         /// </summary>

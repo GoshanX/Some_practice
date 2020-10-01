@@ -6,22 +6,12 @@ using System.Threading.Tasks;
 
 namespace Task_3
 {
-    class Operator : IEmployee
+    class Operator : Employee
     {
-        double salary;
-        public Operator()
+        public Operator(double baseSalary, Company company)
         {
-            salary = Company.BaseSalary;
+            Salary = baseSalary;
+            Company = company;
         }
-        public string getJobName()
-        {
-            return this.GetType().Name;
-        }
-
-        public double getMonthSalary()
-        {
-            return salary;
-        }
-
     }
 }

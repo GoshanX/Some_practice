@@ -10,19 +10,19 @@ namespace Task_3
     {
         public static void Main()
         {
-            Company company = new Company(100000000, 100000);
+            Company company = new Company(110000000);
 
             for (int i = 0; i < 180; i++)
             {
-                company.Hire(new Operator());
+                company.Hire(new Operator(100000, company));
             }
             for (int i = 0; i < 80; i++)
             {
-                company.Hire(new Manager());
+                company.Hire(new Manager(200000, company));
             }
             for (int i = 0; i < 10; i++)
             {
-                company.Hire(new TopManager());
+                company.Hire(new TopManager(300000, company));
             }
 
             company.PrintTopSalary(15);

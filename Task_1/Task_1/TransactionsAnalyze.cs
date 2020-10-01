@@ -13,6 +13,7 @@ namespace Task_1
         {
             this.transactions = movementData;
         }
+
         /// <summary>
         /// Calculate the amount of income
         /// </summary>
@@ -26,6 +27,7 @@ namespace Task_1
             }
             return sumIncome;
         }
+
         /// <summary>
         /// Calculate the amount of expense
         /// </summary>
@@ -39,6 +41,7 @@ namespace Task_1
             }
             return sumExpense;
         }
+
         /// <summary>
         /// creation of summary data on expenses of organizations
         /// </summary>
@@ -65,11 +68,14 @@ namespace Task_1
                         }
                     }
                     if (sumExpenses > 0)
+                    {
                         result.Add(org, sumExpenses);
+                    }
                 }
             }
             return result;
         }
+
         /// <summary>
         /// makes a list of non-repeating organizations
         /// </summary>
@@ -85,6 +91,7 @@ namespace Task_1
 
             return organizations.Distinct().ToList();
         }
+
         /// <summary>
         /// Transaction summary
         /// </summary>

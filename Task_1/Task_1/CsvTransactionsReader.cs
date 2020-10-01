@@ -21,6 +21,7 @@ namespace Task_1
 
         static readonly Dictionary<Delimiter, char> Delimiters = new Dictionary<Delimiter, char>() { { Delimiter.Comma, ',' }, { Delimiter.Tab, '\t' } };
         static Transaction transaction;
+       
         /// <summary>
         /// Read CSV data from path.
         /// </summary>

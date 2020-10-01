@@ -3,3 +3,4 @@ C:\Users\1292355\source\repos\Task_1\Task_1\bin\Debug\Task_1.exe
 C:\Users\1292355\source\repos\Task_1\Task_1\bin\Debug\Task_1.pdb
 C:\Users\1292355\source\repos\Task_1\Task_1\obj\Debug\Task_1.exe
 C:\Users\1292355\source\repos\Task_1\Task_1\obj\Debug\Task_1.pdb
+C:\Users\1292355\source\repos\Task_1\Task_1\obj\Debug\Task_1.csprojAssemblyReference.cache

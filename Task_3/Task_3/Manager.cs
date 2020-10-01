@@ -6,26 +6,17 @@ using System.Threading.Tasks;
 
 namespace Task_3
 {
-    class Manager : IEmployee
+    class Manager : Employee
     {
-        double salary;
         readonly double PREMIUM_MANAGER_RATE = 0.05;
         readonly int LEFT_BORDER_OF_THE_PREMIUM_INTERVAL = 115000;
         readonly int RIGHT_BORDER_OF_THE_PREMIUM_INTERVAL = 140000;
-        public Manager()
+        public Manager(double baseSalary, Company company)
         {
             Random r = new Random();
             //BaseSalary with bonus
-            salary = Company.BaseSalary + PREMIUM_MANAGER_RATE * r.Next(LEFT_BORDER_OF_THE_PREMIUM_INTERVAL, RIGHT_BORDER_OF_THE_PREMIUM_INTERVAL);
-        }
-        public string getJobName()
-        {
-            return this.GetType().Name;
-        }
-
-        public double getMonthSalary()
-        {
-            return salary;
+            Salary = baseSalary + PREMIUM_MANAGER_RATE * r.Next(LEFT_BORDER_OF_THE_PREMIUM_INTERVAL, RIGHT_BORDER_OF_THE_PREMIUM_INTERVAL);
+            Company = company;
         }
     }
 }
