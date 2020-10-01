@@ -10,9 +10,9 @@ namespace Task_3
     {
         public static void Main()
         {
-            Company company = new Company(100000000,100000);
+            Company company = new Company(100000000, 100000);
 
-            for(int i = 0; i < 180; i++)
+            for (int i = 0; i < 180; i++)
             {
                 company.Hire(new Operator());
             }

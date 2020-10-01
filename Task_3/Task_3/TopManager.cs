@@ -6,15 +6,18 @@ using System.Threading.Tasks;
 
 namespace Task_3
 {
-    class TopManager:IEmployee
+    class TopManager : IEmployee
     {
         double salary;
+        readonly double PREMIUM_TOP_MANAGER_RATE = 1.5;
+        readonly ulong PREMIUM_TOP_MANAGER_INCOME = 10000000;
         public TopManager()
         {
             salary = Company.BaseSalary;
-            if (Company.Income > 10000000)
+            //Calculate bonus
+            if (Company.Income > PREMIUM_TOP_MANAGER_INCOME)
             {
-                salary += 1.5 * Company.BaseSalary;
+                salary += PREMIUM_TOP_MANAGER_RATE * Company.BaseSalary;
             }
         }
         public string getJobName()
