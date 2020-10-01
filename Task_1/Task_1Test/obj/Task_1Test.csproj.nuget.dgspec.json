@@ -1,0 +1,93 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\1292355\\source\\repos\\Task_1\\Task_1Test\\Task_1Test.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\1292355\\source\\repos\\Task_1\\Task_1Test\\Task_1Test.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\1292355\\source\\repos\\Task_1\\Task_1Test\\Task_1Test.csproj",
+        "projectName": "Task_1Test",
+        "projectPath": "C:\\Users\\1292355\\source\\repos\\Task_1\\Task_1Test\\Task_1Test.csproj",
+        "packagesPath": "C:\\Users\\1292355\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\1292355\\source\\repos\\Task_1\\Task_1Test\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\1292355\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.0": {
+            "projectReferences": {
+              "C:\\Users\\1292355\\source\\repos\\Task_1\\Task_1\\Task_1.csproj": {
+                "projectPath": "C:\\Users\\1292355\\source\\repos\\Task_1\\Task_1\\Task_1.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "dependencies": {
+            "MSTest.TestAdapter": {
+              "target": "Package",
+              "version": "[1.4.0, )"
+            },
+            "MSTest.TestFramework": {
+              "target": "Package",
+              "version": "[1.4.0, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.2.0, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[1.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\1292355\\source\\repos\\Task_1\\Task_1\\Task_1.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\1292355\\source\\repos\\Task_1\\Task_1\\Task_1.csproj",
+        "projectName": "Task_1",
+        "projectPath": "C:\\Users\\1292355\\source\\repos\\Task_1\\Task_1\\Task_1.csproj"
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    }
+  }
+}
