@@ -59,9 +59,9 @@ namespace Task_3Test
             company.HireAll(employees);
             var oldIncome = company.Income;
             company.Fire(manager);
-            
+
             //assert
-            Assert.AreEqual(company.Income,oldIncome + manager.getMonthSalary());
+            Assert.AreEqual(company.Income, oldIncome + manager.getMonthSalary());
         }
 
         [TestMethod]
@@ -71,6 +71,7 @@ namespace Task_3Test
             Task_3.Company company = new Task_3.Company(2000000);
             Task_3.IEmployee manager = new Task_3.Manager(100000, company);
             List<Task_3.IEmployee> employees = new List<Task_3.IEmployee>() { new Task_3.Operator(10000, company), new Task_3.Manager(1000000, company), manager };
+            
             //action
             company.HireAll(employees);
             company.Fire(manager);
@@ -86,7 +87,8 @@ namespace Task_3Test
             //arrange
             Task_3.Company company = new Task_3.Company(2000000);
             Task_3.IEmployee manager = new Task_3.Manager(100000, company);
-            List<Task_3.IEmployee> employees = new List<Task_3.IEmployee>() { new Task_3.Operator(10000, company), new Task_3.Manager(1000000, company)};
+            List<Task_3.IEmployee> employees = new List<Task_3.IEmployee>() { new Task_3.Operator(10000, company), new Task_3.Manager(1000000, company) };
+            
             //action
             company.HireAll(employees);
             company.Fire(manager);
@@ -100,6 +102,7 @@ namespace Task_3Test
             Task_3.Company company = new Task_3.Company(2000000);
             Task_3.IEmployee manager = new Task_3.Manager(100000, company);
             List<Task_3.IEmployee> employees = new List<Task_3.IEmployee>() { new Task_3.Operator(10000, company), new Task_3.Manager(1000000, company) };
+            
             //action
             company.HireAll(employees);
             company.Fire(-1);
@@ -144,8 +147,10 @@ namespace Task_3Test
             Task_3.Company company = new Task_3.Company(2000000);
             Task_3.IEmployee manager = new Task_3.Manager(100000, company);
             List<Task_3.IEmployee> employees = new List<Task_3.IEmployee>() { new Task_3.Operator(10000, company), new Task_3.Manager(1000000, company) };
+           
             //action
             company.HireAll(employees);
+            
             //ArgumentException, because number of employees = 3
             company.PrintTopSalary(10);
         }
@@ -158,8 +163,10 @@ namespace Task_3Test
             Task_3.Company company = new Task_3.Company(2000000);
             Task_3.IEmployee manager = new Task_3.Manager(100000, company);
             List<Task_3.IEmployee> employees = new List<Task_3.IEmployee>() { new Task_3.Operator(10000, company), new Task_3.Manager(1000000, company) };
+           
             //action
             company.HireAll(employees);
+            
             //ArgumentException, because count < 1
             company.PrintLowestSalary(-10);
         }

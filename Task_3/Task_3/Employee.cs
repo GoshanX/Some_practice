@@ -13,7 +13,7 @@ namespace Task_3
 
         public string getJobName()
         {
-            return this.GetType().Name;
+            return GetType().Name;
         }
 
         public double getMonthSalary()
