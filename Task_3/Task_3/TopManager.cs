@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Task_3
 {
-    class TopManager : Employee
+    public class TopManager : Employee
     {
         readonly double PREMIUM_TOP_MANAGER_RATE = 1.5;
         readonly ulong PREMIUM_TOP_MANAGER_INCOME = 10000000;

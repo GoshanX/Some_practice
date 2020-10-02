@@ -44,5 +44,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="TopManager.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

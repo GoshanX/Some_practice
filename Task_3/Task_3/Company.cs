@@ -39,6 +39,10 @@ namespace Task_3
         /// <param name="count">count of employees</param>
         public void Fire(int count)
         {
+            if(count < 0)
+            {
+                throw new ArgumentException("Неверное значение параметра count: только натуральные числа");
+            }
             if (count > employees.Count)
             {
                 employees.Clear();
@@ -49,7 +53,7 @@ namespace Task_3
                 for (int i = 0; i < count; i++)
                 {
                     int indexRemove = r.Next(0, employees.Count - 1);
-                    Income -= employees[indexRemove].getMonthSalary();
+                    Income += employees[indexRemove].getMonthSalary();
                     employees.RemoveAt(indexRemove);
                 }
             }
@@ -73,8 +77,15 @@ namespace Task_3
         /// <param name="employee"></param>
         public void Fire(IEmployee employee)
         {
-            employees.Remove(employee);
-            Income += employee.getMonthSalary();
+            if (employees.Contains(employee))
+            {
+                employees.Remove(employee);
+                Income += employee.getMonthSalary();
+            }
+            else
+            {
+                throw new ArgumentException("Неверное значение параметра employee: данный сотрудник не работает в компании");
+            }
         }
 
         /// <summary>
@@ -141,6 +152,15 @@ namespace Task_3
                 Console.WriteLine(pos + ") " + emp.getJobName() + " " + emp.getMonthSalary() + " руб.");
                 pos++;
             }
+        }
+
+        /// <summary>
+        /// Get number of employees in the company
+        /// </summary>
+        /// <returns></returns>
+        public int GetNumberOfEmployees()
+        {
+            return employees.Count;
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Task_3
 {
-    class Operator : Employee
+    public class Operator : Employee
     {
         public Operator(double baseSalary, Company company)
         {

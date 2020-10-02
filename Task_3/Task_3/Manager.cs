@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Task_3
 {
-    class Manager : Employee
+    public class Manager : Employee
     {
         readonly double PREMIUM_MANAGER_RATE = 0.05;
         readonly int LEFT_BORDER_OF_THE_PREMIUM_INTERVAL = 115000;
